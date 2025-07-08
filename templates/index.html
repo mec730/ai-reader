@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>AI Felolvasó Mód</title></head>
+<body>
+  <h1>AI Felolvasó Mód</h1>
+  <form action="/generate" method="post">
+    <label>Youtube URL: <input name="youtube_url" required></label><br><br>
+    <label>Felolvasandó szöveg:</label><br>
+    <textarea name="text" rows="4" cols="50" required></textarea><br><br>
+    <button type="submit">Videó generálása</button>
+  </form>
+
+  {% if video_ready %}
+    <hr>
+    <h2>Kész videó:</h2>
+    <video width="640" controls>
+      <source src="{{ url_for('static', filename='output.mp4') }}">
+    </video>
+    <p><a href="{{ url_for('static', filename='output.mp4') }}" download>Letöltés</a></p>
+  {% endif %}
+</body>
+</html>
