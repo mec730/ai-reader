@@ -1,0 +1,5 @@
+Flask
+gTTS
+yt-dlp
+ffmpeg-python
+gunicorn
